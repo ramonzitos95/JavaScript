@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<H1>Index OF</H1>
+
+<strong>IndexOF()</strong>
+<script type="text/javascript">
+    var arr1 = ["laranja", "amarelo", "vermelha", "azul", "verde"];
+    var ret = arr1.indexOf("azul");
+    document.write("<p>Retorno: " + ret + " value = " + arr1[ret] + "</p>");
+    console.log("indexOf()");
+    console.log(ret);
+</script>
+
+<strong>IndexOF(searchelement[, fromindex])</strong>
+<script type="text/javascript">
+    var arr1 = ["laranja", "blue", "vermelha", "blue", "verde"];
+    var ret = arr1.indexOf("blue", 2);
+    document.write("<p>Retorno: " + ret + " value = " + arr1[ret] + "</p>");
+    console.log("indexOf()");
+    console.log(ret);
+</script>
+
+<strong>LastIndexOF()</strong>
+<script type="text/javascript">
+    var arr1 = ["laranja", "blue", "vermelha", "blue", "verde"];
+    var ret = arr1.lastIndexOf("blue");
+    document.write("<p>Retorno: " + ret + " value = " + arr1[ret] + "</p>");
+    console.log("indexOf()");
+    console.log(ret);
+</script>
+
+<strong>LastIndexOF()</strong>
+<script type="text/javascript">
+    var arr1 = ["laranja", "blue", "vermelha", "blue", "verde"];
+    var ret = arr1.lastIndexOf("blue", 2);
+    document.write("<p>Retorno: " + ret + " value = " + arr1[ret] + "</p>");
+    console.log("LastIndexOf()");
+    console.log(ret);
+</script>
+
+
+<strong>Search in pratice()</strong>
+</br>
+<input type="text" id="search">
+<button onclick="Search();">Procurar</button>
+</br>
+<strong>Result:</strong>
+</br>
+<span id="result"></span>
+<script>
+    function Search() {
+        var arr1 = ["conteudo 1 de exemplo", "conteudo 2 de exemplo", "Ramon teste", "Eu tenho um exemplo", "Frase de exemplo"];
+        var search = document.getElementById("search").valueOf();
+        var testkey = null;
+        var result = "";
+        for (var key in arr1) {
+                var auxArray = arr1[key].split(" "); //Quebrando o array por posição adicionando ao novo array, todas as palavras separadas por espaço
+            for (var key2 in auxArray) {
+                if (auxArray.indexOf(search) > -1) {
+                    if (testkey != key) {
+                        testkey = key;
+                        result += "<p>" + arr1[key] + "</p>";
+                    }
+                }
+            }
+        }
+
+        document.getElementById("result").innerHTML = "";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>If AND Else</h1>
+<p>Simple test:</p>
+
+<script>
+    if(3 < 2)
+    {
+        document.write("true");
+    }
+    else
+    {
+        document.write("false");
+    }
+</script>
+
+<p>Calculadora:</p>
+
+<script>
+    function calculator(a,b,op)
+    {
+        if(op === "+")
+        {
+            return a + b;
+        }
+        else if(op === "-")
+        {
+            return a - b;
+        }
+        else if(op === "*")
+        {
+            return a * b;
+        }
+        else
+        {
+            return a / b;
+        }
+    }
+
+    document.write(calculator(5,4, "+"));
+</script>
+
+<script>
+    function calculator(a,b,op)
+    {
+        if(op === "+")
+        {
+            return a + b;
+        }
+        else if(op === "-")
+        {
+            return a - b;
+        }
+        else if(op === "*")
+        {
+            return a * b;
+        }
+        else
+        {
+            return a / b;
+        }
+    }
+
+    document.write(calculator(5,4, "+"));
+</script>
+
+
+<p>Calculadora de troco:</p>
+
+<script>
+    function change(value, cash)
+    {
+        if(value > cash)
+        {
+            return "Error -> value > cash!";
+        }
+        else
+        {
+            return "Change = $" + (cash - value);
+        }
+    }
+
+    document.write(change(55.34, 20));
+</script>
+</body>
+</html>

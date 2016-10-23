@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<H1>Metodos array 2</H1>
+<strong>unshift()</strong>
+<script type="text/javascript">
+    var arr1 = new Array("Red", 10, 20.4);
+    arr1.unshift("Novo elemento");
+    var list = arr1.join(" - "); //Separando cada elemento do array pelo traço
+    document.write("<p>unshift(): " + list + "</p>");
+    console.log("unshift(): ");
+    console.log(list);
+</script>
+
+<strong>slice()</strong>
+<script type="text/javascript">
+    var arr1 = new Array("Red", 10, 20.4, "Novo elemento");
+    var newArray = arr1.slice(1,4) //Selecionando uma area do array e formando um novo array
+    var list = newArray.join(" - "); //Separando cada elemento do array pelo traço
+    document.write("<p>slice(): " + newArray + "</p>");
+    console.log("slice(): ");
+    console.log(newArray);
+</script>
+
+<strong>splice()</strong>
+<script type="text/javascript">
+    var arr1 = new Array("Red", 10, 20.4, "Novo elemento");
+    //Substitui areas de array com posições definidas
+    arr1.splice(1,2, "A", "B", "C", "D");
+    var arr1 = arr1.join(" - "); //Separando cada elemento do array pelo traço
+    document.write("<p>Splice(): " + arr1 + "</p>");
+    console.log("Splice(): ");
+    console.log(arr1);
+</script>
+
+<strong>reverse()</strong>
+<script type="text/javascript">
+    //Invertendo os dados do array com reverse()
+    var arr1 = new Array("A", "B", "C", "D", "E");
+    arr1.reverse();
+    var arr1 = arr1.join(" - "); //Separando cada elemento do array pelo traço
+    document.write("<p>reverse(): " + arr1 + "</p>");
+    console.log("reverse(): ");
+    console.log(arr1);
+</script>
+</body>
+</html>

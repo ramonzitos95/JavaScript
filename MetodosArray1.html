@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Métodos de arrays</h1>
+
+<strong>Concat()</strong>
+    <script type="text/javascript">
+        var arr1 = new Array("Red", 10, 20.4);
+        var arr2 = Array("Blue", 10, 30.3, arr1);
+        arr1 = arr1.concat(arr2);
+        document.write("<p>Concat(): " + arr1.length + "</p>"); //Juntando dois arrays em um só elemento
+        console.log("Concat(): ");
+        console.log(arr1);
+
+    </script>
+
+<strong>Join()</strong>
+<script type="text/javascript">
+    var arr1 = new Array("Red", 10, 20.4);
+    var arr2 = Array("Blue", 10, 30.3, arr1);
+    arr1 = arr1.concat(arr2);
+    var list = arr1.join(" - "); //Separando cada elemento do array pelo traço
+    document.write("<p>Join(): " + list + "</p>");
+    console.log("Join(): ");
+    console.log(list);
+</script>
+
+<strong>Push()</strong>
+<script type="text/javascript">
+    //Adicionando elemento em um array com push() ao final do array
+    var arr3 = new Array("Red", 20, 63.5);
+    arr3.push("New element");
+    var list = arr1.join(" - ");
+    document.write("<p>Push(): " + arr3 + "</p>");
+        console.log("Push(): ");
+    console.log(arr3);
+</script>
+
+<strong>Pop()</strong>
+<script type="text/javascript">
+    //Remove o ultimo elemento do array com pop()
+    var arr3 = new Array("Red", 20, 63.5);
+    arr3.pop();
+    var list = arr1.join(" - ");
+    document.write("<p>Pop(): " + arr3 + "</p>");
+    console.log("Pop(): ");
+    console.log(arr3);
+</script>
+
+
+<strong>Shift()</strong>
+<script type="text/javascript">
+    //Remove o ultimo elemento do array com shift()
+    var arr3 = new Array("Red", 20, 63.5);
+    arr3.shift();
+    var list = arr1.join(" - ");
+    document.write("<p>shift(): " + arr3 + "</p>");
+    console.log("shift(): ");
+    console.log(arr3);
+</script>
+</body>
+</html>
