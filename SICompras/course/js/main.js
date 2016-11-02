@@ -8,9 +8,7 @@
  * */
 
 var list = [
-    {"desc": "rice", "amount": "1", "value": "5.40"},
-    {"desc": "beer", "amount": "12", "value": "1.99"},
-    {"desc": "carne", "amount": "1", "value": "15"}
+    {"desc": "rice", "amount": "1", "value": "5.40"}
 ];
 
 function getTotal(list)
@@ -19,8 +17,7 @@ function getTotal(list)
     for (var key in list) {
         total += list[key].value * list[key].amount;
     }
-
-    return total;
+    document.getElementById("totalValue").innerHTML = formatValue(total);
 };
 
 function setList(list)
@@ -31,6 +28,8 @@ function setList(list)
     }
     table += '</tbody>';
     document.getElementById("listTable").innerHTML = table;
+    getTotal(list);
+    saveListStorage(list);
 }
 
 function formatDesc(desc)
@@ -55,7 +54,7 @@ function formatValue(value)
 
 function addData()
 {
-    if(!validation()){
+    if(!validation){
         return
     }
     var desc = document.getElementById("desc").value;
@@ -92,7 +91,7 @@ function resetForm()
 
 function updateData()
 {
-    if(!validation()){
+    if(!validation){
         return
     }
     var id = document.getElementById("idUpdate").value;
@@ -161,5 +160,26 @@ function validation()
 
 }
 
-setList(list);
-console.log(getTotal(list));
+function deleteList(){
+    if(confirm("Deletar esta lista?")){
+        list = [];
+        setList(list);
+    }
+}
+
+function saveListStorage(list)
+{
+    var jsonStr = JSON.stringify(list); //Transforma a lista em uma string Json
+    localStorage.setItem("list",jsonStr);
+}
+
+function initListStorage()
+{
+    var testeList = localStorage.getItem("list");
+    if(testeList){
+        list = JSON.parse(testeList);
+    }
+    setList(list);
+}
+
+initListStorage();
